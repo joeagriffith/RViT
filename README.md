@@ -9,3 +9,8 @@ The API of the class is identical with VisionTransformer, except the additional 
 ```
 pip install rvit
 ```
+
+## Usage
+```
+from rvit import RegisteredVisionTransformer
+```
