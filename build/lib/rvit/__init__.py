@@ -1,0 +1,1 @@
+from rvit.registered_vision_transformer import RegisteredVisionTransformer

@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: rvit
+Version: 1.0.2
+Summary: Vision Transformer with Registers
+Author: Joe Griffith
+Author-email: <joeagriffith@gmail.com
+Keywords: python,pytorch,vision transformer,register,registers
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+
+A simple augmentation of PyTorch's VisionTransform class from torchvision.models to include registers, as per: https://arxiv.org/abs/2309.16588
+
+Introduces registers to the encoder that are appended as tokens to the 'patchified' sequence, and excluded in the output.
+The tokens are learnable parameters and do not receive positional embeddings.
+
+The API of the class is identical with VisionTransformer, except the additional init argument for 'num_registers', which specifies the number of register tokens.
+
+## Installation
+```
+pip install rvit
+```
