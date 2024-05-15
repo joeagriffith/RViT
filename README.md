@@ -9,3 +9,22 @@ The API of the class is identical with VisionTransformer, except the additional 
 ```
 pip install rvit
 ```
+
+## Initialisation
+```
+rvit.RegisteredVisionTransformer(
+  image_size: int,
+  patch_size: int,
+  num_layers: int,
+  num_heads: int,
+  hidden_dim: int,
+  num_registers: int, # Specifies number of register tokens
+  mlp_dim: int,
+  dropout: float = 0.0,
+  attention_dropout: float = 0.0,
+  num_classes:int = 1000,
+  representation_size: Optional[int] = None,
+  norm_layer: Callable[..., torch.nn.Module] = partial(nn.LayerNorm, eps=1e-6),
+  conv_stem_configs: Optional[List[ConvStemConfig]] = None,
+)
+```
