@@ -52,7 +52,9 @@ class Encoder(nn.Module):
         input = torch.cat([input, self.registers.expand(input.size(0), -1, -1)], dim=1)
         output = self.ln(self.layers(self.dropout(input)))
         # return output, excluding the registers
-        return output[:, :-self.num_registers, :]
+        if self.num_registers > 0:
+            output = output[:, :-self.num_registers, :]
+        return output
 
 
 class RegisteredVisionTransformer(VisionTransformer):
